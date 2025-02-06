@@ -134,15 +134,16 @@ class Profile
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCategoryName(): string
+    public function getCategoryName(): ?string
     {
         return $this->categoryName;
     }
 
     /**
-     * @param string $fullName
+     * @param string $categoryName
+     * @return void
      */
     public function setCategoryName(string $categoryName): void
     {

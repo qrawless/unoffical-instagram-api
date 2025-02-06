@@ -38,11 +38,14 @@ class ProfileHydrator
         $this->profile->setId32Bit($data->id);
         $this->profile->setUserName($data->username);
         $this->profile->setFullName($data->full_name);
-        $this->profile->setCategoryName($data->category_name);
         $this->profile->setFollowers($data->edge_followed_by->count);
         $this->profile->setPrivate($data->is_private);
         $this->profile->setVerified($data->is_verified);
         $this->profile->setMediaCount($data->edge_owner_to_timeline_media->count);
+
+        if (property_exists($data, 'category_name') && $data->category_name !== null) {
+            $this->profile->setCategoryName($data->category_name);
+        }
 
         if (property_exists($data, 'biography')) {
             $this->profile->setBiography($data->biography);
