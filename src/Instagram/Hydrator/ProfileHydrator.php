@@ -38,6 +38,7 @@ class ProfileHydrator
         $this->profile->setId32Bit($data->id);
         $this->profile->setUserName($data->username);
         $this->profile->setFullName($data->full_name);
+        $this->profile->setCategoryName($data->category_name);
         $this->profile->setFollowers($data->edge_followed_by->count);
         $this->profile->setPrivate($data->is_private);
         $this->profile->setVerified($data->is_verified);

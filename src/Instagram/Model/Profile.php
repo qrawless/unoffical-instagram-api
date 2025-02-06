@@ -29,6 +29,11 @@ class Profile
     /**
      * @var string
      */
+    private $categoryName;
+
+    /**
+     * @var string
+     */
     private $biography;
 
     /**
@@ -126,6 +131,22 @@ class Profile
     public function setFullName(string $fullName): void
     {
         $this->fullName = $fullName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCategoryName(): string
+    {
+        return $this->categoryName;
+    }
+
+    /**
+     * @param string $fullName
+     */
+    public function setCategoryName(string $categoryName): void
+    {
+        $this->categoryName = $categoryName;
     }
 
     /**
